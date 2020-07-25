@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .cal {
+            width: 500px;
+        }
+
+        .buttons div.button {
+            width: 30px;
+            height: 30px;
+            border: 0.5px solid black;
+            margin: 3px;
+            display: inline-block;
+        }
+
+        .display {
+            border: 0.5px dotted black;
+            display: inline-block;
+            width: 200px;
+            height: 16px;
+        }
+
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="cal">
+            <div class="title">hello Calc</div>
+            <div class="display" id="display"></div>
+            <div class="display" id="operation"></div>
+            <div class="display" id="answer"></div>
+            <div class="buttons">
+                <div class="numbers">
+                    <div class="button" id="1" onclick="buildTemp(1);">1</div>
+                    <div class="button" id="2" onclick="buildTemp(2);">2</div>
+                    <div class="button" id="3" onclick="buildTemp(3);">3</div>
+                    <div class="button" id="4" onclick="buildTemp(4);">4</div>
+                    <div class="button" id="5" onclick="buildTemp(5);">5</div>
+                    <div class="button" id="6" onclick="buildTemp(6);">6</div>
+                    <div class="button" id="7" onclick="buildTemp(7);">7</div>
+                    <div class="button" id="8" onclick="buildTemp(8);">8</div>
+                    <div class="button" id="9" onclick="buildTemp(9);">9</div>
+                    <div class="button" id="0" onclick="buildTemp(0);">0</div>
+                </div>
+                <div class="operation">
+                    <div class="button" id="add" onclick="tempToX('+');">+</div>
+                    <div class="button" id="sub" onclick="tempToX('-');">-</div>
+                    <div class="button" id="mul" onclick="tempToX('x');">x</div>
+                    <div class="button" id="div" onclick="tempToX('/');">/</div>
+                    <div class="button" id="enter" style="width: 100px;">enter</div>
+                    <div class="button" id="ac" style="width: 60px;" onclick="allClear();">All Clear</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    var display = document.getElementById("display");
+    var operationView = document.getElementById("operation");
+    var answer = document.getElementById("answer");
+    var enter = document.getElementById("enter");
+    var operationSignal = "";
+    var temp = "";
+    var x = "";
+    var y = "";
+    var result = "";
+    var operations;
+
+    function allClear() {
+        temp = "";
+        x = "";
+        result = 0;
+        operationSignal = "";
+        operationView = "";
+        display.innerHTML = temp;
+        answer.innerText = "";
+        
+    }
+    
+    function clearTemp() {
+        temp = "";
+    }
+
+    function displayOperation() {
+        operationView.innerText = x + operationSignal+ temp;
+    }
+
+    function buildTemp(input) {
+        temp += String(input);
+        display.innerHTML = temp;
+        displayOperation();
+    }
+
+    function tempToX(signal) {
+        if(x === "") {
+            x = temp;
+            operationSignal = signal;
+            displayOperation();
+            clearTemp();
+        } else if(x !== "") {
+            cal();
+            displayOperation();
+            clearTemp();
+        }
+    }
+
+    operations = {
+        add : ()=> {
+            result = Number(x) + Number(temp);
+            answer.innerText = result;
+            clearTemp();
+            x = result;
+            operationSignal = "";
+        },
+        sub : ()=> {
+            result = Number(x) - Number(temp);
+            answer.innerText = result;
+            clearTemp();
+            x = result;
+            operationSignal = "";
+        },
+        mul : ()=> {
+            result = Number(x) * Number(temp);
+            answer.innerText = result;
+            clearTemp();
+            x = result;
+            operationSignal = "";
+        },
+        div : ()=> {
+            result = Number(x) / Number(temp);
+            answer.innerText = result;
+            clearTemp();
+            x = result;
+            operationSignal = "";
+        }
+         
+    }
+
+    enter.onclick = function cal() {
+        if(operationSignal === "+") {
+            operations.add();
+        }
+
+        if(operationSignal === "-") {
+            operations.sub();
+        }
+
+        if(operationSignal === "x") {
+            operations.mul();
+        }
+
+        if(operationSignal === "/") {
+            operations.div();
+        }
+    }
+
+</script>
