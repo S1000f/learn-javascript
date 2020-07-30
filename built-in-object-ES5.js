@@ -40,3 +40,33 @@ var output = '';
 output += `++${text}++\n`;
 output += `++${text.trim()}++`;
 console.log(output);
+
+// JSON
+var object = {
+    name: 'milly',
+    region: 'Deagu'
+};
+console.log(object);
+for (var i in object) {
+    console.log(`${i} : ${object[i]}`);
+}
+console.log(JSON.stringify(object));
+
+var tojson = {
+    name: 'yeon',
+    age: 10,
+    toJSON: () => {
+        return { custom: 'custom' };
+    }
+};
+console.log(JSON.stringify(tojson));
+
+// Underscore.js
+var students = [
+    { name: 'a', kor: 98, eng: 65},
+    { name: 'bb', kor: 56, eng: 94},
+    { name: 'cc', kor: 46, eng: 85}
+];
+
+var sortByEng = _.sortBy(students, ((item) => -1 * item.eng));
+console.log(JSON.stringify(sortByEng, null, 2));
