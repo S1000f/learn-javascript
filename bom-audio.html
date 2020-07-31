@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var audio = new Audio();
+        var songUrl = 'Nulbarich-2-NEW_ERA.mp3';
+        audio.src = songUrl;
+    </script>
+    <script>document.write(songUrl);</script><br />
+    <button onclick="audio.play()">PLAY</button>
+    <button onclick="audio.pause()">PAUSE</button>
+    <input type="number" onchange="audio.currentTime = this.value" />
+    <input type="number" onchange="audio.volume = this.value"/>
+</body>
+</html>
