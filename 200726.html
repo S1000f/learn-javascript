@@ -19,10 +19,18 @@
     <script src="bom.js"></script>
     <script src="bom-window-onload.js"></script>--
     <script src="dom.js"></script>--
-    <script src="dom-more.js"></script>-->
-    <script src="dom-more2.js"></script>
+    <script src="dom-more.js"></script>--
+    <script src="dom-more2.js"></script>-->
+    <script src="event.js"></script>
 </head>
 <body>
+    <h1 onclick="whenClick()">inline event model!!</h1>
+    <h1 onclick="var a = 20; alert(a);">inline event model</h1>
+    <button id="button-a">Button A</button>
+    <button id="button-b">button B</button>
+    <h1>Button A - <span id="counter-a">0</span></h1>
+    <h1>Button B - <span id="counter-b">0</span></h1>
+    <h1 id="header">Click</h1>
     <h1 id="header-1">HEADER</h1>
     <h1 id="header-2">HEADER</h1>
     <h1 id="clock"></h1>

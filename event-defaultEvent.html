@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            document.getElementById('my-form').onsubmit = function () {
+                var pass = document.getElementById('pass').value;
+                var passCheck = document.getElementById('pass-check').value;
+
+                if (pass === passCheck) {
+                    alert('succeed');
+                } else {
+                    alert('incorrect id or password, try again please');
+                    return false;
+                }
+            };
+        };
+
+        function checkPassConfirm() {
+            var pass = document.getElementById('pass2').value;
+            var passCheck = document.getElementById('pass-check2').value;
+
+            if (pass === passCheck) {
+                alert('succeed~~');
+            } else {
+                alert('incorrect id or password, try again please~~');
+                return false;
+            }
+        };
+
+    </script>
+</head>
+<body>
+    <form id="my-form">
+        <label for="name">id</label><br />
+        <input type="text" name="name" id="name" /><br />
+        <label for="pass">password</label><br />
+        <input type="password" name="pass" id="pass" /><br />
+        <label for="pass-check">password confirm</label><br />
+        <input type="password" id="pass-check" /><br />
+        <input type="submit" value="submit" />
+    </form>
+    <br />
+    <form onsubmit="return checkPassConfirm()">
+        <label for="name2">id</label><br />
+        <input type="text" name="name2" id="name2" /><br />
+        <label for="pass2">password</label><br />
+        <input type="password" name="pass2" id="pass2" /><br />
+        <label for="pass-check2">password confirm</label><br />
+        <input type="password" id="pass-check2" /><br />
+        <input type="submit" value="submit" />
+    </form>
+</body>
+</html>

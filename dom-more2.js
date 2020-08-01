@@ -3,7 +3,7 @@
 
 // 랜덤한 정수 생성
 function nextRandomInteger(limit) {
-    return Math.round(Math.random() * limit);
+    return Math.floor(Math.random() * limit);
 }
 
 // 랜덤한 알파벳 리턴
@@ -14,7 +14,7 @@ function randomAlphabet() {
 
 // 음수와 양수로 랜덤한 속도를 생성하는 함수
 function randomSpeed(maxSpeed) {
-    return Math.random() * maxSpeed - Math.random() * maxSpeed;
+    return Math.random() * maxSpeed - maxSpeed / 2;
 }
 
 // 생성자함수
@@ -29,6 +29,8 @@ function movingText() {
     this.y = nextRandomInteger(canvasHeight);
     this.vx = randomSpeed(10);
     this.vy = randomSpeed(10);
+    this.ax = 0.1;
+    this.ay = 0;
 
     // 문서객체 생성
     this.body = document.createElement('h1');
@@ -49,8 +51,11 @@ movingText.prototype.move = function () {
     }
 
     // 이동
+    this.vx += this.ax;
+    this.vy += this.ay;
     this.x += this.vx;
     this.y += this.vy;
+    
 
     // 화면에 이동표시
     this.body.style.left = this.x +'px';
