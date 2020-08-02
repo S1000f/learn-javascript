@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.attachEvent('onload', function () {
+            var header = document.getElementById('my-header');
+
+            header.attachEvent('onclick', function () {
+                alert('click01');
+            });
+            
+            header.attachEvent('onclick', function () {
+                alert('click02');
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <h1 id="my-header">click this</h1>
+</body>
+</html>
