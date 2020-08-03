@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .high-light-0 { background: dodgerblue; }
+        .high-light-1 { background: tomato }
+        .high-light-2 { background: coral; }
+        .high-light-3 { background: lightcyan; }
+        .high-light-4 { background: palegreen }
+    </style>
+    <script src="jquery-3.5.1.js"></script>
+    <!--
+    <script src="selector-basic.js"></script>--
+    <script src="selector-more.js"></script>-->
+    <script src="basic.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log('first ready');
+        });
+        // short-form for ready()
+        $(function () {
+            console.log('short-form ready');
+        })
+    </script>
+</head>
+<body>
+    <h2>item - 0</h2>
+    <h2>item - 1</h2>
+    <h2>item - 2</h2>
+    <h2>item - 3</h2>
+    <h2>item - 4</h2>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+        </tr>
+        <tr>
+            <td>Milly</td><td>9</td><td>female</td>
+        </tr>
+        <tr>
+            <td>Yeon</td><td>9</td><td>male</td>
+        </tr>
+        <tr>
+            <td>sully</td><td>10</td><td>female</td>
+        </tr>
+    </table>
+    <input type="text" oninput="doitit()"/>
+    <select onchange="doit()">
+        <option>apple</option>
+        <option>Mac</option>
+        <option>Book</option>
+    </select>
+    <br />
+    <input type="text" />
+    <input type="radio"/>
+    <input type="checkbox">
+    <div>
+        <ul>
+            <li>apple</li>
+            <li>Macbook</li>
+            <li>dog</li>
+        </ul>
+    </div>
+    <h1>jQuery.css()</h1>
+    <p>paragraph</p>
+    <h1 id="target">id property must be unique</h1>
+    <h1 class="item">class item</h1>
+    <h1 class="item select">class item select</h1>
+</body>
+</html>
