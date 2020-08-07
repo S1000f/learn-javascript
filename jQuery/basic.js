@@ -61,7 +61,3 @@ test({
     valueC: 104
 });
 
-test({
-    vva: 2020,
-    vvb: 'cool'
-});
