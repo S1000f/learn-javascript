@@ -48,3 +48,23 @@ $(document).ready(function () {
     $('h4').css('background', 'gray').add('h5').css('float', 'left');
 })
 
+// is()
+$(document).ready(function () {
+    $('h2').each(function () {
+        if ($(this).is('.select')) {
+            $(this).css('background', 'coral');
+        } else {
+            $(this).css('background', 'white');
+        };
+    });
+});
+
+// parent()
+$(function () {
+    $('span').parent().css('background', 'palegreen');
+    $('button').click(function () {
+        $(this).text('inactive');
+        $(this).parent().css('background', 'lightblue');
+        $(this).parent().find('span').text('active');
+    })
+})

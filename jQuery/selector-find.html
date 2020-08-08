@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        var xml = '';
+        xml += '<friends>';
+        xml += '    <friend>';
+        xml += '        <name>Milly</name>';
+        xml += '        <language>Ruby</language>';
+        xml += '    </friend>';
+        xml += '    <friend>';
+        xml += '        <name>Yeon</name>';
+        xml += '        <language>Js</language>';
+        xml += '    </friend>';
+        xml += '</friends>';
+
+        $(document).ready(function () {
+            var xmlDoc = $.parseXML(xml);
+            $(xmlDoc).find('friend').each(function (i) {
+                var output = '';
+                output += '<div>';
+                output += '<h1>' + $(this).find('name').text() + '</h1>';
+                output += ' <p>' + $(this).find('language').text() + '</p>';
+                output += '</div>';
+
+                document.body.innerHTML += output;
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
