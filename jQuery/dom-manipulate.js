@@ -30,5 +30,47 @@ $(document).ready(function () {
         height: 100
     });
 
+    // removeAttr()
+    $('img').removeAttr('width');
+
+    // css()
+    var color = $('h2').css('color');
+    console.log(color);
+
+    $('h2').css('background', 'palegreen');
+
+    var colors = ['dodgerblue', 'coral', 'tomato'];
+    $('h2').css('background', index => {
+        return colors[index];
+    });
+
+    $('h2').css({
+        color: index => {
+            return colors[index];
+        },
+        backgroundColor: 'cornflowerblue'
+    });
+
+    // html() and text()
+    var html = $('h1').html();
+    console.log(html);
+
+    var text = $('h1').text();
+    console.log(text);
+
+    $('div').html('<h1>$().html() Method</h1>');
+    $('div').text('<h1>$().html() Method</h1>');
+
+    $('div').html(index => {
+        return '<h1>Heading!-' + index + '</h1>';
+    });
+
+    $('div').html((index, html) => {
+        return '{{' + html + '}}';
+    });
+
+    $('h1').first().remove();
+    $('div').empty();
+
 });
 
