@@ -37,6 +37,12 @@ $(document).ready(function () {
         output += `<h2>${item.age}</h2>`;
 
         return output;
-    })
+    });
 
+    setInterval(function () {
+        $('img').first().appendTo('body');
+    }, 2000);
+
+    // clone()
+    $('nav').append($('h4').clone());
 })
