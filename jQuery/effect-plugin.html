@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="effect-plugin.js"></script>
+    <style>
+        .reverse {
+            color: white;
+            background-color: black;
+        }
+        div#ease {
+            background-color: coral;
+            width: 100px; height: 100px;
+            position: relative;
+        }
+        * {
+            margin: 0; padding: 0;
+        }
+        #canvas {
+            background-color: antiquewhite;
+            width: 600px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner-box {
+            background-color: dodgerblue;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .animation-canvas {
+            overflow: hidden;
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+        .slider-panel {
+            width: 3000px;
+            position: relative;
+        }
+        .slider-image {
+            float: left;
+            width: 600px;
+            height: 400px;
+        }
+
+        .slider-text-panel {
+            position: absolute;
+            top: 200px;
+            left: 50px;
+        }
+        .slider-text {
+            position: absolute;
+            width: 250px;
+            height: 150px;
+        }
+
+        .control-panel {
+            position: absolute;
+            top: 380px;
+            left: 270px;
+            height: 13px;
+            overflow: hidden;
+        }
+        .control-button {
+            width: 12px;
+            height: 46px;
+            border-radius: 5px;
+            position: relative;
+            float: left;
+            cursor: pointer;
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>slide-header</h1>
+    <div class="animation-canvas">
+        <div class="slider-panel">
+            <img src="../milly.jpeg" alt="" class="slider-image">
+            <img src="../milly01.jpeg" alt="" class="slider-image">
+            <img src="../sully01.jpeg" alt="" class="slider-image">
+            <img src="" alt="" class="slider-image">
+            <img src="" alt="" class="slider-image">
+        </div>
+        <div class="slider-text-panel">
+            <div class="slider-text">
+                <h1>Aliquip consectetur excepteur aliquip veniam exercitation reprehenderit et exercitation magna amet dolor ex.</h1>
+                <p>Anim aliquip irure officia laboris.</p>
+            </div>
+            <div class="slider-text">
+                <h1>Irure sit ex aute in aliqua culpa do elit nostrud officia esse.</h1>
+                <p>Pariatur et enim ullamco aliquip occaecat dolore ullamco laborum dolore consequat.</p>
+            </div>
+            <div class="slider-text">
+                <h1>Et aute irure velit eu ipsum irure Lorem sint.</h1>
+                <p>Enim eiusmod amet dolor velit magna ex.</p>
+            </div>
+            <div class="slider-text">
+                <h1>Anim sit duis ea proident elit sit anim in pariatur veniam quis enim ad ullamco.</h1>
+                <p>Anim ea duis ut in eu nulla consectetur nulla labore minim esse sint consectetur.</p>
+            </div>
+            <div class="slider-text">
+                <h1>Irure aliquip sit consectetur magna aliqua Lorem id laborum elit quis adipisicing.</h1>
+                <p>Non laborum officia proident nostrud deserunt cupidatat proident.</p>
+            </div>
+        </div>
+        <div class="control-panel">
+            <div class="control-button"></div>
+            <div class="control-button"></div>
+            <div class="control-button"></div>
+            <div class="control-button"></div>
+            <div class="control-button"></div>
+        </div>
+    </div>
+    <h1>slide-header</h1>
+
+    <br />
+    <h2>Test header</h2>
+    <div id="canvas">
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+    </div>
+    <h2>Test header</h2>
+    <br />
+    <select name="" id="">
+        <option value="">linear</option>
+        <option value="">swing</option>
+        <option value="">easeInQuad</option>
+        <option value="">easeInBounce</option>
+        <option value="">easeOutBounce</option>
+        <option value="">easeInOutBounce</option>
+    </select>
+    <button>MOVE IT</button>
+    <div id="ease"></div>
+    <div class="cl">
+        <h1>In ex fugiat do ex elit magna et.</h1>
+        <p>Consequat quis minim nisi anim esse sunt eiusmod.</p>
+    </div>
+    <div class="cl">
+        <h1>Magna in adipisicing ea consectetur sit eiusmod.</h1>
+        <p>Incididunt ea nulla in id sint excepteur.</p>
+    </div>
+    <div class="cl">
+        <h1>Mollit ut duis tempor officia occaecat amet id ad irure nulla incididunt eiusmod non.</h1>
+        <p>Proident ipsum eiusmod laborum mollit nisi velit pariatur.</p>
+    </div>
+</body>
+</html>
