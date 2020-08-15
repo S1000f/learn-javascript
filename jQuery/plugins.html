@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dialogs {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="example1/colorbox.css" />
+    <script src="jquery-3.5.1.js"></script>
+    <script src="jquery.colorbox.js"></script>
+    <script src="plugins.js"></script>
+</head>
+<body>
+    <div class="myplugin">
+        <h1>my plugin</h1>
+    </div>
+
+    <a href="#dialog2" id="colorbox2">dialog with lightbox</a>
+    <div id="dialogs">
+        <div id="dialog2">
+            <h1>Auto Open Dialog</h1>
+            <p>3 seconds later, this will be closed automatically</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <a href="#dialog1" id="colorbox">dialog with Colorbox</a>
+
+    <!-- dialog -->
+    <div id="dialogs" style="display: none;">
+        <div id="dialog1">
+            <h1>Auto Open Colorbox</h1>
+            <p>Enim aliqua irure cupidatat non velit elit pariatur non ea elit nulla dolore labore cillum.
+                Sint commodo consequat excepteur aliquip. Nulla in cillum voluptate eu irure 
+                cillum velit commodo labore aliquip eiusmod ea occaecat velit.
+                Lorem laborum occaecat Lorem anim aute quis enim deserunt.
+                Minim occaecat anim ipsum labore adipisicing est deserunt qui sint.</p>
+        </div>
+    </div>
+
+    <h1>jquery lightbox</h1>
+    <a rel="lightbox" class="lightbox" title="Daisy the dog" href="content/daisy.jpg">img1</a>
+    <a rel="lightbox" class="lightbox" href="content/marylou.jpg">img2</a>
+    <a rel="lightbox" class="lightbox" href="content/ohoopee1.jpg">img3</a>
+    <a rel="lightbox" class="lightbox" href="content/ohoopee2.jpg">img4</a>
+    <a rel="lightbox" class="lightbox" href="content/ohoopee3.jpg">img5</a>
+</body>
+</html>
