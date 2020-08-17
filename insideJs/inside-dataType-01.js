@@ -38,7 +38,7 @@ console.log(nullvar === null);
 
 // 3.2 reference type (object type)
 // 3.2.1 initialize object
-//// Object()
+//// by Object()
 var foo = new Object();
 foo.name = 'foo';
 foo.age = 20;
@@ -46,10 +46,71 @@ foo.age = 20;
 console.log(typeof foo);
 console.log(foo)
 
-//// object literal
+//// by object literal
 var foos = {
     name: 'foo',
-    age: 20
+    age: 20,
+    major: 'something'
 };
 console.log(foos);
 
+// 3.2.2. Object Property read/write/update
+// read
+console.log(foo.name);
+console.log(foo['name']);
+console.log(foo.nickname);
+
+// update
+foo.major = 'Economics';
+console.log(foo.major);
+
+// dynamic property creating
+foo.height = 180;
+console.log(foo.height);
+
+// []
+foo['full-name'] = 'foo bar';
+console.log(foo.full-name);
+console.log(foo['full-name']);
+
+// 3.2.3 for in and printing properties
+var prop;
+for (prop in foos) {
+    console.log(prop, foo[prop])
+}
+
+// delete operation - delete only object's properties but an object
+delete foo.major;
+console.log(foo.major);
+
+// 3.3 Reference Type
+// 3.3.1 comparing operator
+var a = 100;
+var b = 100;
+
+var objA = { value: 100 };
+var objB = { value: 100 };
+var objC = objB;
+
+console.log(a == b);
+console.log(objA == objB);
+console.log(objB == objC);
+
+// 3.3.2 CBV CBR
+var a = 100;
+var objA = { value: 100 };
+
+function change(num, obj) {
+    num = 200;
+    obj.value = 200;
+
+    console.log(num);
+    console.log(obj);
+}
+
+change(a, objA);
+console.log(a);
+console.log(objA)
+
+console.log(objA.toString());
+console.dir(objA);
