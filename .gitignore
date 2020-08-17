@@ -1,7 +1,7 @@
 /.vscode/
-/underscore.js
-/*.mp3
-/*.jpeg
+js/underscore.js
+js/*.mp3
+js/*.jpeg
 /jQuery/jquery*
 /jQuery/images
 /jQuery/content
