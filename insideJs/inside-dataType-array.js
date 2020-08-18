@@ -11,7 +11,7 @@ emptyarr[3] = 'eight';
 emptyarr[7] = true;
 console.log(emptyarr); // 100, undefined x 2, "eight", undefined x 3, true
 console.log(emptyarr.length); // 8
-
+``
 var arr = [];
 console.log(arr.length); // 0
 arr[0] = 0;
