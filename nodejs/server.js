@@ -86,7 +86,7 @@ app.all('/parameter', (req, res) => {
     var name = req.param('name');
     var region = req.param('region');
 
-    res.send('<h1>' + name + ' : ' + region + '</h1>');
+    res.send('<h1>' + name + ' ::: ' + region + '</h1>');
 });
 app.all('/dynamic/:id', (req, res) => {
     var id = req.params.id;
@@ -110,18 +110,36 @@ app.all('/data.xml', (req, res) => {
     output += '</products>';
     res.type('text/xml');
     res.send(output);
-})
+});
+app.all('/data.html', (req, res) => {
+    var out = '';
+    out += '<!DOCTYPE html>';
+    out += '<html>';
+    out += '<head>';
+    out += '    <title>data HTML response</title>';
+    out += '</head>';
+    out += '<body>';
+    items.forEach(item => {
+        out += '<div>';
+        out += `    <h2>${item.name}</h2>`;
+        out += `    <h3>${item.price}</h3>`;
+        out += '</div>';
+    });
+    out += '</body>';
+    out += '</html>';
+    res.send(out);
+});
 
 app.use(function (req, res, next) {
     req.test = 'request.test~';
     res.test = 'response.test!';
     next();
-})
+});
 app.use(function (request, response, next) {
     response.send('<h1>' + request.test + ' : ' + response.test + '</h1>');
-})
+});
 
 // start the server
 app.listen(54242, function () {
     console.log('Server running at http://localhost:54242');
-})
+});
