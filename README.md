@@ -366,6 +366,8 @@ console.log(foo.hasOwnProperty('name')); // true
 - 따라서 prototype 객체의 프로퍼티가 변경되기 전에 생성됬든, 이후에 생성됬든지 상관없이, 해당 prototype 객체를 링크한 객체라면 언제든지 변경된 프로퍼티에 접근이 가능하다.
 
 - 또한 prototype 객체안의 함수 역시 메서드 이므로, prototype 메서드의 this 바인딩 규칙 또한 메서드 방식을 그대로 따른다.
+    + Power.prototype.say() 의 this는 Power.prototype 객체를 가리키며
+    + foo.say() 의 this는 foo 객체를 가리킨다.
 
 ```javascript
 function Power(name) {
