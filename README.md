@@ -389,8 +389,8 @@ Power.prototype.say(); // hey~ Power
 - prototype 객체를 다른 것으로 변경 가능하다
 - 단, 프로토타입 체이닝과 다르게 변경된 내용은 이후에 새로 생성된 객체에만 적용된다([[prototype]] 링크가 가리키는 객체가 달라졌기 때문)
 
-- 아래에서, foo는 생성될 당시에 prototype 객체에 country 라는 프로퍼티가 없었다. 즉 비어있는 객체가 만들어지고 this에 그 객체가 바인딩 되었고, this.name = name을 통해 'foo'가 대입되었을 뿐이다.
-- 그러나 bar 가 생성될 당시에는 prototype 객체에 country : 'korea' 라는 프로퍼티가 존재하므로 그 프로퍼티를 포함하여 새로운 객체가 만들어지면서 this가 바인딩 되고, this.name = name 을 통해서 'bar'가 입력되는 것이다.
+- 아래에서, foo는 생성될 당시에 prototype 객체에 country 라는 프로퍼티가 없었다. 즉 비어있는 객체가 만들어지고 this에 그 객체가 바인딩 되었고, this.name = name을 통해 name : 'foo'가 입력되었을 뿐이다.
+- 그러나 bar 가 생성될 당시에는 prototype 객체에 country : 'korea' 라는 프로퍼티가 존재하므로 그 프로퍼티를 포함하여 새로운 객체가 만들어지면서 this가 바인딩 되고, this.name = name 을 통해서 name : 'bar'가 입력되는 것이다.
 
 ```javascript
 function Change(name) {
