@@ -47,10 +47,11 @@ console.log(foo); // foobar
 console.log(window.foo); // foobar
 
 //
-var test = 'this is a test';
+var test = 'this is a test from window object';
 console.log(window.test); // this is a test
 
 var sayFoo = function () {
+    var test = 'hey';
     console.log(this.test);
 };
 sayFoo(); // this is a test
