@@ -1,5 +1,5 @@
 # learn-javascript
-Inside JavaScript -송형주, 고현주, 한빛미디어(2014)
+Inside JavaScript -송형주, 고현준, 한빛미디어(2014)
 
 # 데이터 타입
 >기본타입과 참조타입(객체)으로 나뉜다.
