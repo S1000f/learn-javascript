@@ -134,8 +134,7 @@ var Capsule = function (arg) {
     };
 };
 
-var me = new Capsule();
-me.setName('polkadot');
+var me = new Capsule('polkadot');
 console.log(me.getName()); // polkadot
 console.log(me.name); // undefined
 me.name = 'kdh';
@@ -155,9 +154,11 @@ var Capsule2 = function (arg) {
 };
 
 // function return module pattern
-var Capsule3 = function (arg) {
-    var name = arg ? arg : 'default name';
-    var F = function () {};
+var Capsule3 = function () {
+    var name = 'default name';
+    var F = function (arg) {
+        name = arg || name;
+    };
     F.prototype = {
         getName : function () {
             return name;
