@@ -83,3 +83,22 @@ result = calculate(2, 5, function (input) {
 console.log(result); // 6.25
 console.log(calculate(1)); // 25
 console.log(calculate(2)); // 6.25
+
+// ex3; fibonacci seq
+var fibo = function () {
+    var cache = {
+        '0' : 0,
+        '1' : 1
+    };
+    var fibonacci = function (n) {
+        if (typeof(cache[n]) === 'number') {
+            result = cache[n];
+        } else {
+            result = cache[n] = fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        return result;
+    };
+    return fibonacci;
+}();
+console.log(fibo(3)); // 2
+
