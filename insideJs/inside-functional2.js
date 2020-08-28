@@ -63,3 +63,74 @@ newFunc(); // name : milly the cat
 var ob = new newFunc(); // name : sully
 console.log(ob.getName()); // sully
 
+// wrapper
+function _wrap(object, method, wrapper) {
+    var fn = object[method];
+    return object[method] = function () {
+        return wrapper.apply(this, [ fn ].concat(Array.prototype.slice.call(arguments)));
+    };
+}
+Function.prototype.original = function (val) {
+    this.val = val;
+    console.log(`value : ${this.val}`);
+};
+var mywrap = _wrap(Function.prototype, 'original', function(origin_func, val) {
+    this.val = 20;
+    origin_func(val);
+    console.log('wrapper value : ' + this.val);
+});
+var obj = new mywrap("milly"); // value : milly wrapper value : 20
+
+// iteration functions
+// each()
+function _each(obj, fn, args) {
+    if (obj.length === undefined) {
+        for (var i in obj) {
+            fn.apply(obj[i], args || [i, obj[i]]);
+        }
+    } else {
+        for (var i = 0; i < obj.length; i++) {
+            fn.apply(obj[i], args || [i, obj[i]]);
+        }
+    }
+    return obj;
+};
+_each([1, 2, 3], function (index, num) {
+    console.log(arguments[0] + ' : ' + num);
+});
+var obje = {
+    name : 'Sully',
+    age : 10,
+    gender : 'girl'
+};
+_each(obje, (index, value) => 
+    console.log(index + ' : ' + value));
+
+// map
+Array.prototype._map = function(callback) {
+    var array = this;
+    var A = new Array(array.length);
+
+    for (var i = 0; i < array.length; i++) {
+        A[i] = callback.call(null, array[i]);
+    }
+    return A;
+};
+
+var arr = [1, 2, 3];
+var new_arr = arr._map(val => val * val);
+console.log(new_arr);
+
+// reduce
+Array.prototype._reduce = function (callback, memo) {
+    var obj = this;
+    var value, accumValue = 0;
+    for (var i = 0; i < obj.length; i++) {
+        value = obj[i];
+        accumValue = callback.call(null, accumValue, value);
+    }
+    return accumValue;
+};
+var ar = [1, 2, 3];
+var accumulated = ar._reduce((pre, curr) => pre + curr * curr);
+console.log(accumulated);
